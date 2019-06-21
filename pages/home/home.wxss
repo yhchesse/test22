@@ -1,0 +1,10 @@
+/* pages/home/home.wxss */
+@import "./gird.wxss";
+.card{
+  display: flex;
+}
+.card image{
+  flex: 1;
+  height: 200rpx;
+  padding: 10rpx;
+}
