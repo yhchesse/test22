@@ -1,0 +1,34 @@
+<!--pages/list/list.wxml-->
+<view>
+<!-- 搜索区域 -->
+<include src="./weiui-serachbar.wxml" />
+  <!-- 列表区域 -->
+  <block wx:for="{{list}}" wx:key="{{item.id}}">
+    <navigator url='/pages/detail/detail?id={{item.id}}' class="list">
+      <view class='left'>
+        <image src="{{item.images[0]}}" />
+      </view>
+      <view class='center'>
+        <text class='title1'>{{item.name}}</text>
+        <text>{{item.phone}}</text>
+        <text>{{item.address}}</text>
+        <text>{{item.businessHours}}</text>
+      </view>
+      <view class='right'>
+        <text>{{item.score}}</text>
+      </view>
+    </navigator>
+  </block>
+  <!-- 加载更多 -->
+  <block wx:if="{{hasMore}}">
+  <view class="weui-loadmore">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  </block>
+  <block wx:else>
+  <view class="weui-loadmore">
+    <view class="weui-loadmore__tips">我也是有底线的</view>
+  </view>
+  </block>
+</view>
